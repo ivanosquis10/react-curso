@@ -1,0 +1,8 @@
+.TodoCounter {
+  width: 90%;
+  font-size: 3.5rem;
+  text-align: center;
+  margin: 0 auto;
+  padding: 48px 48px 30px 48px;
+  text-transform: uppercase;
+}

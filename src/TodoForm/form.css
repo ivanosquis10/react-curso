@@ -1,0 +1,99 @@
+form {
+  width: 90%;
+  max-width: 300px;
+  height: 300px;
+  background-color: #0f0e17;
+  padding: 40px 50px;
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  text-align: center;
+}
+
+label {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  margin-top: 0;
+  text-transform: uppercase;
+}
+
+textarea {
+  resize: none;
+  width: calc(100%-25px);
+  height: 150px;
+  border: 3px solid #7f5af0;
+  border-radius: 5px;
+  font-size: 20px;
+  text-align: center;
+  color: #1e1e1f;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: #a5a5a5;
+  font-family: 'Roboto';
+  font-weight: 400;
+}
+
+.container__btn {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.btn {
+  width: 100%;
+  border: 1px solid #7f5af0;
+  border-radius: 5px;
+  padding: 8px 0px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.btn__cancel {
+  background-color: #232946;
+}
+
+.btn__add {
+  background-color: #121629;
+}
+
+.btn__cancel:hover {
+  transition: 0.1s ease-in-out;
+  background-color: #16161a;
+}
+
+.btn__add:hover {
+  transition: 0.1s ease-in-out;
+  background-color: #16161a;
+}
+
+/* .container__form {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 20px;
+  color: #202329;
+  font-weight: 400;
+  width: 120px;
+  height: 48px;
+  border-radius: 2px;
+  border: none;
+  font-family: 'Montserrat';
+} */
+
+/* .button__add {
+  background-color: #61dafa;
+  box-shadow: 0px 5px 25px rgba(97, 218, 250, 0.5);
+}
+
+.button__cancel {
+  background: transparent;
+} */
