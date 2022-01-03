@@ -1,7 +1,7 @@
 import React from 'react';
 import './TodoSearch.css';
 
-function TodoSearch({ search, setSearch }) {
+function TodoSearch({ search, setSearch, loading }) {
   const onSearchValueChange = (e) => {
     setSearch(e.target.value);
   };
@@ -12,6 +12,7 @@ function TodoSearch({ search, setSearch }) {
       placeholder="Search a task..."
       value={search}
       onChange={onSearchValueChange}
+      disabled={loading}
     />
   );
 }

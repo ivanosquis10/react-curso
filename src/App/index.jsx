@@ -30,18 +30,25 @@ function App() {
 
   return (
     <React.Fragment>
-      <TodoHeader>
+      <TodoHeader loading={loading}>
         <TodoCounter totalTodo={totalTodo} completedTodo={completedTodo} />
 
         <TodoSearch search={search} setSearch={setSearch} />
       </TodoHeader>
 
-      <TodoList>
-        {error && <TodosError error={error} />}
-        {loading && <TodosLoading />}
-        {!loading && !searchedTodo.length && <EmptyTodos />}
-
-        {searchedTodo.map((todo) => (
+      <TodoList
+        error={error}
+        loading={loading}
+        searchedTodo={searchedTodo}
+        searchText={search}
+        totalTodo={totalTodo}
+        onError={() => <TodosError />}
+        onLoading={() => <TodosLoading />}
+        onEmptyTodos={() => <EmptyTodos />}
+        onEmptySearchResult={(searchText) => (
+          <p> No hay resultados para {searchText} </p>
+        )}
+        render={(todo) => (
           <TodoItem
             key={todo.text}
             text={todo.text}
@@ -49,8 +56,18 @@ function App() {
             onComplete={() => completeTodos(todo.text)}
             onDelete={() => deleteTodo(todo.text)}
           />
-        ))}
-      </TodoList>
+        )}
+      />
+      {/* {(todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onComplete={() => completeTodos(todo.text)}
+            onDelete={() => deleteTodo(todo.text)}
+          />
+        )}
+      </TodoList> */}
 
       {/* EXISTE OPEN MODAL? true => muestra */}
       {openModal && (

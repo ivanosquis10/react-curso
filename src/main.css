@@ -12,6 +12,7 @@ body {
   font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 2rem;
   font-weight: 400;
+  overflow-x: hidden;
 }
 
 #root {

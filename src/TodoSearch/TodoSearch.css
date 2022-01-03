@@ -4,7 +4,7 @@
   background: #f9fbfc;
   text-align: center;
   border-radius: 10px;
-  border: 2px solid #202329;
+  border: 1px solid #7f5af0;
   margin: 24px auto;
   /* font-size: 2rem; */
   text-align: center;
@@ -20,4 +20,8 @@
   font-weight: 700;
   font-size: 2rem;
   letter-spacing: 1.5px;
+}
+
+.todo__search:disabled {
+  opacity: 25%;
 }
