@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 
 function useLocalStorage(itemName, initialValue) {
+  const [sincronizedItem, setSincronizedItem] = useState(true);
+
   // Estados de carga y de error
   const [error, setError] = useState(false);
 
@@ -24,11 +26,12 @@ function useLocalStorage(itemName, initialValue) {
 
         setItem(parsedItem);
         setLoading(false);
+        setSincronizedItem(true);
       } catch (error) {
         setError(error);
       }
-    }, 1000);
-  }, []);
+    }, 3000);
+  }, [sincronizedItem]);
 
   // Puente que va a funcionar para manejar los datos en la app y localStorage
   const saveItem = (newItem) => {
@@ -42,7 +45,12 @@ function useLocalStorage(itemName, initialValue) {
     }
   };
 
-  return { item, saveItem, loading, error };
+  const sincronizeItem = () => {
+    setLoading(true);
+    setSincronizedItem(false);
+  };
+
+  return { item, saveItem, loading, error, sincronizeItem };
 }
 
 export { useLocalStorage };

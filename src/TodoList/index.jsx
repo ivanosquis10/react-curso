@@ -24,7 +24,7 @@ function TodoList({
 
       {!!totalTodo && !searchedTodo.length && onEmptySearchResult(searchText)}
 
-      {searchedTodo.map(renderFuc)}
+      {!loading && !error && searchedTodo.map(renderFuc)}
     </section>
   );
 }

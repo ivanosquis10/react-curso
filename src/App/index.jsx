@@ -11,6 +11,7 @@ import { TodoForm } from '../TodoForm';
 import { TodosError } from '../TodosError';
 import { TodosLoading } from '../TodosLoading';
 import { EmptyTodos } from '../EmptyTodos';
+import { ChangeAlertWithStorageListener } from '../ChangeAlert';
 
 function App() {
   const {
@@ -26,6 +27,7 @@ function App() {
     search,
     setSearch,
     addTodo,
+    sincronizeTodos,
   } = useTodos();
 
   return (
@@ -35,7 +37,6 @@ function App() {
 
         <TodoSearch search={search} setSearch={setSearch} />
       </TodoHeader>
-
       <TodoList
         error={error}
         loading={loading}
@@ -68,15 +69,15 @@ function App() {
           />
         )}
       </TodoList> */}
-
       {/* EXISTE OPEN MODAL? true => muestra */}
       {openModal && (
         <Modal>
           <TodoForm addTodo={addTodo} setOpenModal={setOpenModal} />
         </Modal>
       )}
-
       <CreateTodoButton setOpenModal={setOpenModal} />
+
+      <ChangeAlertWithStorageListener sincronize={sincronizeTodos} />
     </React.Fragment>
   );
 }
